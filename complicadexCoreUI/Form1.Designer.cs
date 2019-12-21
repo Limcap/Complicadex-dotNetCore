@@ -86,7 +86,7 @@ namespace complicadexCoreUI
 			// menu_Opcoes
 			// 
 			this.menu_Opcoes.Size = new Size(70, 20);
-			this.menu_Opcoes.Text = "Opcoes";
+			this.menu_Opcoes.Text = "Opções";
 			this.menu_Opcoes.DropDownItems.AddRange(new ToolStripItem[]
 			{
 			});
@@ -139,10 +139,10 @@ namespace complicadexCoreUI
 			// 
 			// lblDesc
 			// 
-			this.lblDesc.Text = "Descrição";
+			this.lblDesc.Text = "Descrição do problema";
 			this.lblDesc.Font = new Font("Noto Sans", 10);
 			this.lblDesc.AutoSize = true;
-			this.lblDesc.Margin = new Padding(0, 10, 0, 0);
+			this.lblDesc.Margin = new Padding(0, 10, 0, 5);
 			// 
 			// txtDesc
 			// 
@@ -155,10 +155,10 @@ namespace complicadexCoreUI
 			// 
 			// lblInput
 			// 
-			this.lblInput.Text = "Funções de modelagem";
+			this.lblInput.Text = "Modelo linear";
 			this.lblInput.Font = new Font("Noto Sans", 10);
 			this.lblInput.AutoSize = true;
-			this.lblInput.Margin = new Padding(0, 10, 0, 0);
+			this.lblInput.Margin = new Padding(0, 10, 0, 5);
 			// 
 			// txtInput
 			// 
@@ -174,7 +174,7 @@ namespace complicadexCoreUI
 			this.lblOutput.Text = "Solução";
 			this.lblOutput.Font = new Font("Noto Sans", 10);
 			this.lblOutput.AutoSize = true;
-			this.lblOutput.Margin = new Padding(0, 10, 0, 0);
+			this.lblOutput.Margin = new Padding(0, 10, 0, 5);
 			// 
 			// txtOutput
 			// 
@@ -215,7 +215,6 @@ namespace complicadexCoreUI
 
 			this.ResumeLayout(false);
 			this.PerformLayout();
-
 		}
 
 		#region Windows Form Designer generated code
@@ -227,6 +226,7 @@ namespace complicadexCoreUI
 		private ToolStripMenuItem menu_Problemas;
 		private ToolStripMenuItem menu_Opcoes;
 		private ToolStripMenuItem menu_Resolver;
+
 		private Panel panel1;
 		private TableLayoutPanel tableLayoutPanel1;
 
