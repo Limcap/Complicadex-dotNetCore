@@ -17,29 +17,18 @@ namespace simplexUI
 		public Complicadex()
 		{
 			InitializeComponent();
+			textbox_adjustHeight(txtDesc);
+			textbox_adjustHeight(txtInput);
+			textbox_adjustHeight(txtOutput);
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		private void button1_Click( object sender, EventArgs e )
 		{
 			Teste t = new Teste();
-			txtInput.Text = t.say();
+			txtDesc.Text = t.say();
 			t.nome = "s";
-			int pos = txtInput.Size.Height + txtInput.Location.Y;
+			int pos = txtDesc.Size.Height + txtDesc.Location.Y;
 			Console.WriteLine( "bottom Y of txtInput {0}", pos);
-		}
-
-		private void txtInput_TextChanged( object sender, EventArgs e )
-		{
-			// Count how many lines there is in the textbox
-			int lines = 1 + txtInput.Text.Count( f => f == '\n' );
-			lines = lines > 10 ? 10 : lines;
-			// Defines the line height
-			int lineHeight = TextRenderer.MeasureText( "H", txtInput.Font ).Height;
-			// Defines the padding height
-			int padding = 6;
-			// Defines textbox height
-			txtInput.Height = lineHeight * lines + padding;
-			repositionElements();			
 		}
 
 		/// <summary>
@@ -48,11 +37,30 @@ namespace simplexUI
 		private void repositionElements()
 		{
 			int spaceBetween = 5;
-			int y = txtInput.Size.Height + txtInput.Location.Y;
+			int y = txtDesc.Size.Height + txtDesc.Location.Y;
 			Console.WriteLine("bottom Y of txtInput {0}", y);
-			System.Drawing.Point l = txtOutput.Location;
+			System.Drawing.Point l = txtInput.Location;
 			l.Y = y + spaceBetween;
-			txtOutput.Location = l;
+			txtInput.Location = l;
 		}
+
+		private void textbox_adjustHeight( TextBox box )
+		{
+			// Count how many lines there is in the textbox
+			int lines = box.Text.Count(f => f == '\n');
+			lines = lines < 2 ? 2 : (lines + 1);
+			// Defines the line height
+			int lineHeight = TextRenderer.MeasureText( "A", box.Font ).Height;
+			// Defines the padding height
+			int padding = 6;
+			// Defines textbox height
+			box.Height = lineHeight * lines + padding;
+		}
+
+		private void textbox_adjustHeight( object sender, EventArgs e )
+		{
+			textbox_adjustHeight( (TextBox) sender );
+		}
+
 	}
 }
