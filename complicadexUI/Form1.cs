@@ -31,19 +31,6 @@ namespace simplexUI
 			Console.WriteLine( "bottom Y of txtInput {0}", pos);
 		}
 
-		/// <summary>
-		/// Recalculates the position and size of the controls in the form.
-		/// </summary>
-		private void repositionElements()
-		{
-			int spaceBetween = 5;
-			int y = txtDesc.Size.Height + txtDesc.Location.Y;
-			Console.WriteLine("bottom Y of txtInput {0}", y);
-			System.Drawing.Point l = txtInput.Location;
-			l.Y = y + spaceBetween;
-			txtInput.Location = l;
-		}
-
 		private void textbox_adjustHeight( TextBox box )
 		{
 			// Count how many lines there is in the textbox
